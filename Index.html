@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .detail {
+      margin: 20px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 20px;
+      padding: 12px;
+      background: #f2f2f2;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 0;
+      border-radius: 6px;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Bank Details</h1>
+
+  <div class="detail">
+    <span class="label">Account name</span>
+    <div class="value" id="name">Best Barber Goole Ltd</div>
+    <button onclick="copyText('name')">Copy</button>
+  </div>
+
+  <div class="detail">
+    <span class="label">Account number</span>
+    <div class="value" id="account">86237168</div>
+    <button onclick="copyText('account')">Copy</button>
+  </div>
+
+  <div class="detail">
+    <span class="label">Sort code</span>
+    <div class="value" id="sortcode">30-54-66</div>
+    <button onclick="copyText('sortcode')">Copy</button>
+  </div>
+
+  <script>
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+    }
+  </script>
+
+</body>
+</html>
